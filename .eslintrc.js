@@ -22,16 +22,25 @@ module.exports = {
   },
   plugins: [
     'react',
-    'prettier'
+    'prettier',
+    'import',
+    'jsx-a11y'
   ],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': [
-      'warn',
+      'error',
       {
         extensions: ['.jsx', '.js']
       }
     ],
+    'no-unused-expressions': [
+      'error',
+      {
+          'allowTaggedTemplates': true
+        }
+    ],
+    'global-require': 'off',
     'import/prefer-default-export': 'off',
     'react/state-in-constructor': 'off',
     'react/static-property-placement': 'off',
